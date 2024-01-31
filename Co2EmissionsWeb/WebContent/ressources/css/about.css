@@ -1,0 +1,82 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* About Container */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h2, h3 {
+    color: #333;
+}
+
+/* Welcome Section */
+.welcome-section, .services-section, .news-section, .call-to-action, .contact-section {
+    margin-bottom: 20px;
+}
+
+/* Services Section */
+.services-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services-section li {
+    margin-bottom: 5px;
+}
+
+/* Image Section */
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* News Section */
+.news-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Call-to-action Section */
+.call-to-action {
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .about-container {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,118 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: 'Calibri', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contentsTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sousTitle{
+	    font-size: 15px;
+	    color: darkgreen;
+
+}
+
+.table-container {
+    text-align: center;
+	overflow-x: auto; 
+    max-height: 500px; 
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dataTable th, .dataTable td {
+    border: 1px solid #21252A;
+    padding: 8px;
+}
+
+.dataTable th {
+    background-color: #21252A;
+    color: white;
+}
+
+.dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dataTable tr:hover {
+    background-color: #ddd;
+}
+
+
+
+.select-form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.select-form label {
+    margin-right: 10px;
+}
+
+.select-form select {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+
+
+.approval-buttons{
+	
+	padding: 0;
+	
+}
+
+.select-form select,
+.button {
+    font-size: 14px;
+}
+
+
+.padding-container {
+    padding: 20px;
+}
+
+.select-form label {
+    margin-right: 10px;
+}
+
+.select-form select {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+.button {
+    padding: 10px;
+    margin-bottom: 10px; 
+    background-color: lightgreen; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.unbutton {
+   padding: 10px;
+    margin-bottom: 10px; 
+    background-color: red; 
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add styles for the new year select if needed */
+

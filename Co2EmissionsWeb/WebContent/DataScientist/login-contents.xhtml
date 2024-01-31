@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/Co2EmissionsWeb/ressources/css/login.css" />
+</h:head>
+
+<h:body>
+    <div class="login-container">
+        <div class="welcome-message">
+            Welcome our data scientist, Please sign in
+        </div>
+		<div style="text-align: center;font-size:12px; margin-bottom: 10px;color: red;font-weight: bold;''">
+	        	${param.loginError}        	
+        </div>
+        <div class="login-form">
+            <h:form>
+                <label for="username">Username:</label>
+                <h:inputText id="username" value="#{dataScientistMB.dataScientist.username}" required="true"/>
+
+                <label for="password">Password:</label>
+                <h:inputSecret id="password" value="#{dataScientistMB.dataScientist.password}" required="true"/>
+
+                <h:commandButton value="Sign In" action="#{dataScientistMB.login}" />
+
+                
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

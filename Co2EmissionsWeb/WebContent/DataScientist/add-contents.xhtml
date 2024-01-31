@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://java.sun.com/jsf/ui"
+                xmlns:fn="http://java.sun.com/jsf/functions"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+ 
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/Co2EmissionsWeb/ressources/css/add.css" />
+	
+	 <div style="text-align: center;font-size:12px; margin-bottom: 10px;color: darkgreen;font-weight: bold;'">
+	        	${param.success}        	
+      </div>
+    <div class="form-container">
+        <br/>
+        <h:outputText value="Add New Co2 Emission Data" styleClass="contentsTitle"/>
+        <hr/>
+        <h:form>
+            <h:panelGrid columns="2" styleClass="form-grid">
+                <h:outputLabel for="country" value="Country:" />
+                <h:inputText id="country" value="#{co2MB.co2Emission.country}" required="true" />
+
+                <h:outputLabel for="year" value="Year:" />
+                <h:inputText id="year" value="#{co2MB.co2Emission.year}" required="true" />
+
+                <h:outputLabel for="co2EmissionKt" value="Co2 Emissions (KT):" />
+                <h:inputText id="co2EmissionKt" value="#{co2MB.co2Emission.co2EmissionKt}" required="true" />
+
+                <h:outputLabel for="approuved" value="Approuved:" />
+                <h:selectBooleanCheckbox id="approuved" value="#{co2MB.co2Emission.approuved}" />
+
+                <h:commandButton value="Submit" action="#{co2MB.saveCo2EmissionData}" styleClass="button" />
+				 <h:commandButton value="Back" action="#{co2MB.back}" styleClass="back-button" immediate="true" />
+            </h:panelGrid>
+        </h:form>
+    </div>
+
+</ui:composition>

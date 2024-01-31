@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #21252A;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none; /* Remove underline from the anchor tag */
+    color: inherit; /* Inherit color from the parent */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust the height as needed */
+    width: 50px; /* Adjust the width as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navigation a:hover{
+	background-color: dimgrey;
+}

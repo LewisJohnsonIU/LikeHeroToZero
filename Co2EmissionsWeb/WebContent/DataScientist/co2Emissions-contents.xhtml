@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://java.sun.com/jsf/ui"
+                xmlns:fn="http://java.sun.com/jsf/functions"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+
+ 	<f:metadata>
+		<f:viewAction action="#{dataScientistMB.checkLoggedInUser}" />
+    </f:metadata>
+    
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/Co2EmissionsWeb/ressources/css/co2.css" />
+
+    <div class="table-container">
+        <div class="padding-container">
+        <br/>
+        <h:outputText value="Co2 Emissions Data in all the world" styleClass="contentsTitle"/>
+        <div>
+	        <p style="text-align: center;color: darkgreen;font-size: 12px;">#{param.success}</p>        
+        </div>
+        <h:form>
+        <div class="select-form">
+         <h:outputLabel for="countryFilter" value="Filter by Country:"/>
+		    <h:selectOneMenu id="countryFilter" value="#{co2MB.country}" >
+		        <f:selectItem itemLabel="All Countries" itemValue=""/>
+		        <f:selectItems value="#{co2MB.listCountries}" />
+		    </h:selectOneMenu>
+		
+		    <h:outputLabel for="yearFilter" value="Filter by Year:"/>
+		    <h:selectOneMenu id="yearFilter" value="#{co2MB.year}">
+		        <f:selectItem itemLabel="All Years" itemValue=""/>
+		        <f:selectItems value="#{co2MB.years}" />
+		    </h:selectOneMenu>
+		    <h:commandButton value="Filter" styleClass="button" action="#{co2MB.filterDataByCountry}" >
+		    	<f:ajax execute="yearFilter" render="datatable" />
+		    	<f:ajax execute="countryFilter" render="datatable" />
+		    </h:commandButton>
+        </div>
+      	<h:dataTable id="datatable" value="#{co2MB.listCo2Emissions}" var="co2Data" border="1" styleClass="dataTable">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            #{co2Data.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Country</f:facet>
+            #{co2Data.country}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Year</f:facet>
+            #{co2Data.year}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Co2 Emissions (KT)</f:facet>
+            #{co2Data.co2EmissionKt}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Approuved</f:facet>
+            #{co2Data.approuved ? "YES" : "NO"}
+        </h:column>
+         <f:facet name="footer">
+                    <h:outputText value="Total of data : #{co2MB.totalData}" />
+         </f:facet>
+		</h:dataTable>
+		
+		<h:commandButton value="Add new Co2 Emission Data" styleClass="button" action="add" />
+        </h:form>
+    </div>
+    </div>
+
+</ui:composition>
